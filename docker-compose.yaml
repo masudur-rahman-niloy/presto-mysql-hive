@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  presto:
+    build: ./presto/
+    container_name: presto-server
+    ports:
+      - "8080:8080"
+    args:
+      - PRESTO_VERSION=0.276
+
+  db:
+    image: 'mysql:latest'
+    container_name: mysql_database
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      - MYSQL_ROOT_PASSWORD=my-secret-pw
+      - MYSQL_DATABASE=world_x
+  
+  
