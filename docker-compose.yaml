@@ -1,13 +1,14 @@
-version: '3'
+version: '3.8'
 
 services:
   presto:
-    build: ./presto/
+    build: 
+      context: ./presto/
+      args:
+        - PRESTO_VERSION=0.276
     container_name: presto-server
     ports:
       - "8080:8080"
-    args:
-      - PRESTO_VERSION=0.276
 
   db:
     image: 'mysql:latest'
@@ -19,5 +20,4 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=my-secret-pw
       - MYSQL_DATABASE=world_x
-  
   
