@@ -4,11 +4,13 @@ This project uses docker compose to build a mysql, hive and presto container. Da
 
 To run the setup
 
-1. Clone the project
-2. `cd presto-mysql-hive`
-3. Install necessary software by 
-`sudo apt update`
+1. Install necessary software by 
+
+`sudo apt update` 
+
 `sudo apt install -y docker.io docker-compose git nano`
+2. Clone the project
+3. `cd presto-mysql-hive`
 
 4. Run the service by 
 `sudo docker-compose up -d`
@@ -24,9 +26,13 @@ we should get the result
 7. Exit from presto container
 
 8. To enter data to hive run
+
 `docker exec -it hive-server /bin/bash`
+
 `cd /hive-data-employee`
+
 `hive -f employee_table.hql`
+
 `hadoop fs -put employee.csv hdfs://namenode:8020/user/hive/warehouse/testdb.db/employee`
 
 9. Exit from this container and access the presto terminal 
