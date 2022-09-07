@@ -1,6 +1,25 @@
 # Use Presto to query from mysql and hive
 
-This project uses docker compose to build a mysql, hive and presto container. Data can be queried from mysql and hive using presto.
+### Presto
+
+Presto is a distributed query engine used in big data application. It can query data from multiple sources like mysql, postgres, redis, kafka, hive elasticsearch and many more using sql like syntax. It can scale to multiple workers 
+
+### Hive 
+
+Apache hive is a data warehouse software. It can manage, read and write large datasets in distributed storage using SQL.
+
+### MySQL
+
+MySQL is a relational database management system. It stores data in row based table structure.
+
+---
+### The problem it solves
+
+In large systems there is a possibility to have different flavours of databases. It is messy to use different query languages that every database offers. **Presto** offers a unified query syntex for all data sources which makes it easy to use different data sources for analytical purposes. 
+
+---
+
+This project uses docker compose to build a mysql, hive and presto container. Data can be queried from mysql and hive using presto cli.
 
 To run the setup
 
