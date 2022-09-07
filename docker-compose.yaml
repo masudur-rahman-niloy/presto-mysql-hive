@@ -49,10 +49,8 @@ services:
       - "50075:50075"
 
   hive-server:
-    image: bde2020/hive:2.3.2-postgresql-metastore
+    build: ./employee/
     container_name: hive-server
-    volumes:
-      - ./employee:/employee
     env_file:
       - ./hadoop-hive.env
     environment:
