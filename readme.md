@@ -9,7 +9,9 @@ To run the setup
 `sudo apt update` 
 
 `sudo apt install -y docker.io docker-compose git nano`
+
 2. Clone the project
+
 3. `cd presto-mysql-hive`
 
 4. Run the service by 
